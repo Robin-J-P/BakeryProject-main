@@ -55,7 +55,7 @@ function Cake1(props) {
       ref={ref}
       {...props}
       dispose={null}
-      scale={1}
+      scale={0.6}
       onPointerOver={(e) => (e.stopPropagation(), set(e.object.material.name))}
       onPointerOut={(e) => e.intersections.length === 0 && set(null)}
       onPointerMissed={() => (state.current = null)}
@@ -165,85 +165,92 @@ function Picker() {
         }}
       >
         <h1>{snap.current}</h1>
-        <div
-          class='options'
-          style={{
-            display: snap.current ? 'block' : 'none',
-            position: 'relative',
-            top: '10px',
-            left: '40px',
-          }}
-        >
-          <button
-            color={snap.items.base}
-            onClick={(color) => (state.items.base = '#FC5A8D')}
+        <div className='pics'>
+          <div
+            class='options'
+            style={{
+              display: snap.current ? 'block' : 'none',
+              position: 'relative',
+              top: '10px',
+              left: '40px',
+            }}
           >
-            <img src={optionStrawberry} data-option='Strawberry' />
-          </button>
-        </div>
-        <div
-          class='options'
-          style={{
-            display: snap.current ? 'block' : 'none',
-            position: 'relative',
-            top: '10px',
-            left: '40px',
-          }}
-        >
-          <button
-            color={snap.items.base}
-            onClick={(color) => (state.items.base = '#F3E5AB')}
+            <button
+              color={snap.items.base}
+              onClick={(color) => (state.items.base = '#FC5A8D')}
+            >
+              <img src={optionStrawberry} data-option='Strawberry' />
+              Strawberry
+            </button>
+          </div>
+          <div
+            class='options'
+            style={{
+              display: snap.current ? 'block' : 'none',
+              position: 'relative',
+              top: '10px',
+              left: '40px',
+            }}
           >
-            <img src={optionVanilla} data-option='Vanilla' />
-          </button>
-        </div>
-        <div
-          class='options'
-          style={{
-            display: snap.current ? 'block' : 'none',
-            position: 'relative',
-            top: '10px',
-            left: '40px',
-          }}
-        >
-          <button
-            color={snap.items.base}
-            onClick={(color) => (state.items.base = '#F4BB44')}
+            <button
+              color={snap.items.base}
+              onClick={(color) => (state.items.base = '#F3E5AB')}
+            >
+              <img src={optionVanilla} data-option='Vanilla' />
+              Vanilla
+            </button>
+          </div>
+          <div
+            class='options'
+            style={{
+              display: snap.current ? 'block' : 'none',
+              position: 'relative',
+              top: '10px',
+              left: '40px',
+            }}
           >
-            <img src={optionMango} data-option='Mango' />
-          </button>
-        </div>
-        <div
-          class='options'
-          style={{
-            display: snap.current ? 'block' : 'none',
-            position: 'relative',
-            top: '10px',
-            left: '40px',
-          }}
-        >
-          <button
-            color={snap.items.base}
-            onClick={(color) => (state.items.base = '#7B3F00')}
+            <button
+              color={snap.items.base}
+              onClick={(color) => (state.items.base = '#F4BB44')}
+            >
+              <img src={optionMango} data-option='Mango' />
+              Mango
+            </button>
+          </div>
+          <div
+            class='options'
+            style={{
+              display: snap.current ? 'block' : 'none',
+              position: 'relative',
+              top: '10px',
+              left: '40px',
+            }}
           >
-            <img src={optionChoco} data-option='Choco' />
-          </button>
-        </div>
-        <div
-          class='options'
-          style={{
-            display: snap.current ? 'block' : 'none',
-            position: 'relative',
-            top: '10px',
-            left: '40px',
-          }}
-        >
-          <button
-            color={snap.items.base}
-            onClick={(color) => (state.items.base = '#FFA500')}
+            <button
+              color={snap.items.base}
+              onClick={(color) => (state.items.base = '#7B3F00')}
+            >
+              <img src={optionChoco} data-option='Choco' />
+              Chocolate
+            </button>
+          </div>
+          <div
+            class='options'
+            style={{
+              display: snap.current ? 'block' : 'none',
+              position: 'relative',
+              top: '10px',
+              left: '40px',
+            }}
           >
-            <img src={optionOrange} data-option='Orange' />
-          </button>
+            <button
+              color={snap.items.base}
+              onClick={(color) => (state.items.base = '#FFA500')}
+            >
+              <img src={optionOrange} data-option='Orange' />
+              Orange
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -273,6 +280,7 @@ function Picker() {
             onClick={(color) => (state.items.toping1 = '#FC5A8D')}
           >
             <img src={optionStrawberry} data-option='Strawberry' />
+            Strawberry
           </button>
         </div>
         <div
@@ -289,6 +297,7 @@ function Picker() {
             onClick={(color) => (state.items.toping1 = '#F3E5AB')}
           >
             <img src={optionVanilla} data-option='Vanilla' />
+            Vanilla
           </button>
         </div>
         <div
@@ -305,6 +314,7 @@ function Picker() {
             onClick={(color) => (state.items.toping1 = '#F4BB44')}
           >
             <img src={optionMango} data-option='Mango' />
+            Mango
           </button>
         </div>
         <div
@@ -321,6 +331,7 @@ function Picker() {
             onClick={(color) => (state.items.toping1 = '#7B3F00')}
           >
             <img src={optionChoco} data-option='Choco' />
+            Chocolate
           </button>
         </div>
         <div
@@ -337,6 +348,7 @@ function Picker() {
             onClick={(color) => (state.items.toping1 = '#FFA500')}
           >
             <img src={optionOrange} data-option='Orange' />
+            Orange
           </button>
         </div>
       </div>
@@ -367,6 +379,7 @@ function Picker() {
             onClick={(color) => (state.items.toping2 = '#FC5A8D')}
           >
             <img src={optionStrawberry} data-option='Strawberry' />
+            Strawberry
           </button>
         </div>
         <div
@@ -383,6 +396,7 @@ function Picker() {
             onClick={(color) => (state.items.toping2 = '#F3E5AB')}
           >
             <img src={optionVanilla} data-option='Vanilla' />
+            Vanilla
           </button>
         </div>
         <div
@@ -399,6 +413,7 @@ function Picker() {
             onClick={(color) => (state.items.toping2 = '#F4BB44')}
           >
             <img src={optionMango} data-option='Mango' />
+            Mango
           </button>
         </div>
         <div
@@ -415,6 +430,7 @@ function Picker() {
             onClick={(color) => (state.items.toping2 = '#7B3F00')}
           >
             <img src={optionChoco} data-option='Choco' />
+            Chocolate
           </button>
         </div>
         <div
@@ -431,6 +447,7 @@ function Picker() {
             onClick={(color) => (state.items.toping2 = '#FFA500')}
           >
             <img src={optionOrange} data-option='Orange' />
+            Orange
           </button>
         </div>
       </div>
@@ -461,6 +478,7 @@ function Picker() {
             onClick={(color) => (state.items.cone1 = '#FC5A8D')}
           >
             <img src={optionStrawberry} data-option='Strawberry' />
+            Strawberry
           </button>
         </div>
         <div
@@ -477,6 +495,7 @@ function Picker() {
             onClick={(color) => (state.items.cone1 = '#F3E5AB')}
           >
             <img src={optionVanilla} data-option='Vanilla' />
+            Vanilla
           </button>
         </div>
         <div
@@ -493,6 +512,7 @@ function Picker() {
             onClick={(color) => (state.items.cone1 = '#F4BB44')}
           >
             <img src={optionMango} data-option='Mango' />
+            Mango
           </button>
         </div>
         <div
@@ -509,6 +529,7 @@ function Picker() {
             onClick={(color) => (state.items.cone1 = '#7B3F00')}
           >
             <img src={optionChoco} data-option='Choco' />
+            Chocolate
           </button>
         </div>
         <div
@@ -525,6 +546,7 @@ function Picker() {
             onClick={(color) => (state.items.cone1 = '#FFA500')}
           >
             <img src={optionOrange} data-option='Orange' />
+            Orange
           </button>
         </div>
       </div>
@@ -555,6 +577,7 @@ function Picker() {
             onClick={(color) => (state.items.cone2 = '#FC5A8D')}
           >
             <img src={optionStrawberry} data-option='Strawberry' />
+            Strawberry
           </button>
         </div>
         <div
@@ -571,6 +594,7 @@ function Picker() {
             onClick={(color) => (state.items.cone2 = '#F3E5AB')}
           >
             <img src={optionVanilla} data-option='Vanilla' />
+            Vanilla
           </button>
         </div>
         <div
@@ -587,6 +611,7 @@ function Picker() {
             onClick={(color) => (state.items.cone2 = '#F4BB44')}
           >
             <img src={optionMango} data-option='Mango' />
+            Mango
           </button>
         </div>
         <div
@@ -603,6 +628,7 @@ function Picker() {
             onClick={(color) => (state.items.cone2 = '#7B3F00')}
           >
             <img src={optionChoco} data-option='Choco' />
+            Chocolate
           </button>
         </div>
         <div
@@ -619,6 +645,7 @@ function Picker() {
             onClick={(color) => (state.items.cone2 = '#FFA500')}
           >
             <img src={optionOrange} data-option='Orange' />
+            Orange
           </button>
         </div>
       </div>
@@ -649,6 +676,7 @@ function Picker() {
             onClick={(color) => (state.items.cone3 = '#FC5A8D')}
           >
             <img src={optionStrawberry} data-option='Strawberry' />
+            Strawberry
           </button>
         </div>
         <div
@@ -665,6 +693,7 @@ function Picker() {
             onClick={(color) => (state.items.cone3 = '#F3E5AB')}
           >
             <img src={optionVanilla} data-option='Vanilla' />
+            Vanilla
           </button>
         </div>
         <div
@@ -681,6 +710,7 @@ function Picker() {
             onClick={(color) => (state.items.cone3 = '#F4BB44')}
           >
             <img src={optionMango} data-option='Mango' />
+            Mango
           </button>
         </div>
         <div
@@ -697,6 +727,7 @@ function Picker() {
             onClick={(color) => (state.items.cone3 = '#7B3F00')}
           >
             <img src={optionChoco} data-option='Choco' />
+            Chocolate
           </button>
         </div>
         <div
@@ -713,6 +744,7 @@ function Picker() {
             onClick={(color) => (state.items.cone3 = '#FFA500')}
           >
             <img src={optionOrange} data-option='Orange' />
+            Orange
           </button>
         </div>
       </div>
@@ -743,6 +775,7 @@ function Picker() {
             onClick={(color) => (state.items.cone4 = '#FC5A8D')}
           >
             <img src={optionStrawberry} data-option='Strawberry' />
+            Strawberry
           </button>
         </div>
         <div
@@ -759,6 +792,7 @@ function Picker() {
             onClick={(color) => (state.items.cone4 = '#F3E5AB')}
           >
             <img src={optionVanilla} data-option='Vanilla' />
+            Vanilla
           </button>
         </div>
         <div
@@ -775,6 +809,7 @@ function Picker() {
             onClick={(color) => (state.items.cone4 = '#F4BB44')}
           >
             <img src={optionMango} data-option='Mango' />
+            Mango
           </button>
         </div>
         <div
@@ -791,6 +826,7 @@ function Picker() {
             onClick={(color) => (state.items.cone4 = '#7B3F00')}
           >
             <img src={optionChoco} data-option='Choco' />
+            Chocolate
           </button>
         </div>
         <div
@@ -807,6 +843,7 @@ function Picker() {
             onClick={(color) => (state.items.cone4 = '#FFA500')}
           >
             <img src={optionOrange} data-option='Orange' />
+            Orange
           </button>
         </div>
       </div>
@@ -837,6 +874,7 @@ function Picker() {
             onClick={(color) => (state.items.ball1 = '#FC5A8D')}
           >
             <img src={optionStrawberry} data-option='Strawberry' />
+            Strawberry
           </button>
         </div>
         <div
@@ -853,6 +891,7 @@ function Picker() {
             onClick={(color) => (state.items.ball1 = '#F3E5AB')}
           >
             <img src={optionVanilla} data-option='Vanilla' />
+            Vanilla
           </button>
         </div>
         <div
@@ -869,6 +908,7 @@ function Picker() {
             onClick={(color) => (state.items.ball1 = '#F4BB44')}
           >
             <img src={optionMango} data-option='Mango' />
+            Mango
           </button>
         </div>
         <div
@@ -885,6 +925,7 @@ function Picker() {
             onClick={(color) => (state.items.ball1 = '#7B3F00')}
           >
             <img src={optionChoco} data-option='Choco' />
+            Chocolate
           </button>
         </div>
         <div
@@ -901,6 +942,7 @@ function Picker() {
             onClick={(color) => (state.items.ball1 = '#FFA500')}
           >
             <img src={optionOrange} data-option='Orange' />
+            Orange
           </button>
         </div>
       </div>
@@ -931,6 +973,7 @@ function Picker() {
             onClick={(color) => (state.items.ball2 = '#FC5A8D')}
           >
             <img src={optionStrawberry} data-option='Strawberry' />
+            Strawberry
           </button>
         </div>
         <div
@@ -947,6 +990,7 @@ function Picker() {
             onClick={(color) => (state.items.ball2 = '#F3E5AB')}
           >
             <img src={optionVanilla} data-option='Vanilla' />
+            Vanilla
           </button>
         </div>
         <div
@@ -963,6 +1007,7 @@ function Picker() {
             onClick={(color) => (state.items.ball2 = '#F4BB44')}
           >
             <img src={optionMango} data-option='Mango' />
+            Mango
           </button>
         </div>
         <div
@@ -979,6 +1024,7 @@ function Picker() {
             onClick={(color) => (state.items.ball2 = '#7B3F00')}
           >
             <img src={optionChoco} data-option='Choco' />
+            Chocolate
           </button>
         </div>
         <div
@@ -995,6 +1041,7 @@ function Picker() {
             onClick={(color) => (state.items.ball2 = '#FFA500')}
           >
             <img src={optionOrange} data-option='Orange' />
+            Orange
           </button>
         </div>
       </div>
@@ -1025,6 +1072,7 @@ function Picker() {
             onClick={(color) => (state.items.ball3 = '#FC5A8D')}
           >
             <img src={optionStrawberry} data-option='Strawberry' />
+            Strawberry
           </button>
         </div>
         <div
@@ -1041,6 +1089,7 @@ function Picker() {
             onClick={(color) => (state.items.ball3 = '#F3E5AB')}
           >
             <img src={optionVanilla} data-option='Vanilla' />
+            Vanilla
           </button>
         </div>
         <div
@@ -1057,6 +1106,7 @@ function Picker() {
             onClick={(color) => (state.items.ball3 = '#F4BB44')}
           >
             <img src={optionMango} data-option='Mango' />
+            Mango
           </button>
         </div>
         <div
@@ -1073,6 +1123,7 @@ function Picker() {
             onClick={(color) => (state.items.ball3 = '#7B3F00')}
           >
             <img src={optionChoco} data-option='Choco' />
+            Chocolate
           </button>
         </div>
         <div
@@ -1089,6 +1140,7 @@ function Picker() {
             onClick={(color) => (state.items.ball3 = '#FFA500')}
           >
             <img src={optionOrange} data-option='Orange' />
+            Orange
           </button>
         </div>
       </div>
@@ -1119,6 +1171,7 @@ function Picker() {
             onClick={(color) => (state.items.ball4 = '#FC5A8D')}
           >
             <img src={optionStrawberry} data-option='Strawberry' />
+            Strawberry
           </button>
         </div>
         <div
@@ -1135,6 +1188,7 @@ function Picker() {
             onClick={(color) => (state.items.ball4 = '#F3E5AB')}
           >
             <img src={optionVanilla} data-option='Vanilla' />
+            Vanilla
           </button>
         </div>
         <div
@@ -1151,6 +1205,7 @@ function Picker() {
             onClick={(color) => (state.items.ball4 = '#F4BB44')}
           >
             <img src={optionMango} data-option='Mango' />
+            Mango
           </button>
         </div>
         <div
@@ -1167,6 +1222,7 @@ function Picker() {
             onClick={(color) => (state.items.ball4 = '#7B3F00')}
           >
             <img src={optionChoco} data-option='Choco' />
+            Chocolate
           </button>
         </div>
         <div
@@ -1183,6 +1239,7 @@ function Picker() {
             onClick={(color) => (state.items.ball4 = '#FFA500')}
           >
             <img src={optionOrange} data-option='Orange' />
+            Orange
           </button>
         </div>
       </div>
@@ -1315,10 +1372,21 @@ function Picker() {
 export default function Cake() {
   return (
     <>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <Picker />
       {/* <Pick /> */}
       <Canvas
+        className='canvas'
         concurrent
+        style={{
+          width: '1000px',
+          height: '600px',
+          marginLeft: '100px',
+        }}
         pixelRatio={[1, 1.5]}
         camera={{ position: [0, 0, 2.75] }}
       >

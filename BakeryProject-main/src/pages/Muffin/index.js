@@ -440,6 +440,7 @@ function Picker() {
             onClick={(color) => (state.items.base = '#FC5A8D')}
           >
             <img src={optionStrawberry} data-option='Strawberry' />
+            Strawberry
           </button>
         </div>
         <div
@@ -456,6 +457,7 @@ function Picker() {
             onClick={(color) => (state.items.base = '#F3E5AB')}
           >
             <img src={optionVanilla} data-option='Vanilla' />
+            Vanilla
           </button>
         </div>
         <div
@@ -472,6 +474,7 @@ function Picker() {
             onClick={(color) => (state.items.base = '#F4BB44')}
           >
             <img src={optionMango} data-option='Mango' />
+            Mango
           </button>
         </div>
         <div
@@ -488,6 +491,7 @@ function Picker() {
             onClick={(color) => (state.items.base = '#7B3F00')}
           >
             <img src={optionChoco} data-option='Choco' />
+            Chocolate
           </button>
         </div>
         <div
@@ -504,6 +508,7 @@ function Picker() {
             onClick={(color) => (state.items.base = '#FFA500')}
           >
             <img src={optionOrange} data-option='Orange' />
+            Orange
           </button>
         </div>
       </div>
@@ -534,6 +539,7 @@ function Picker() {
             onClick={(color) => (state.items.icing = '#FC5A8D')}
           >
             <img src={optionStrawberry} data-option='Strawberry' />
+            Strawberry
           </button>
         </div>
         <div
@@ -550,6 +556,7 @@ function Picker() {
             onClick={(color) => (state.items.icing = '#F3E5AB')}
           >
             <img src={optionVanilla} data-option='Vanilla' />
+            Vanilla
           </button>
         </div>
         <div
@@ -566,6 +573,7 @@ function Picker() {
             onClick={(color) => (state.items.icing = '#F4BB44')}
           >
             <img src={optionMango} data-option='Mango' />
+            Mango
           </button>
         </div>
         <div
@@ -582,6 +590,7 @@ function Picker() {
             onClick={(color) => (state.items.icing = '#7B3F00')}
           >
             <img src={optionChoco} data-option='Choco' />
+            Chocolate
           </button>
         </div>
         <div
@@ -598,6 +607,7 @@ function Picker() {
             onClick={(color) => (state.items.icing = '#FFA500')}
           >
             <img src={optionOrange} data-option='Orange' />
+            Orange
           </button>
         </div>
       </div>
@@ -660,10 +670,25 @@ function Picker() {
 export default function Muffin() {
   return (
     <>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <Picker />
-      <Canvas>
+      <Canvas
+        className='canvas'
+        concurrent
+        style={{
+          width: '1000px',
+          height: '900px',
+          marginLeft: '100px',
+          marginTop: '50px',
+        }}
+        pixelRatio={[1, 1.5]}
+        camera={{ position: [0, 0, 2.75] }}
+      >
         <ambientLight intensity={0.5} />
-        <directionalLight intensity={1} position={[80, 80, 30]} castShadow />
+
         <ContactShadows
           rotation-x={Math.PI / 2}
           position={[0, -0.8, 0]}

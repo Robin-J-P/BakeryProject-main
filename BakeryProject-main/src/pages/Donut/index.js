@@ -326,6 +326,7 @@ function Picker() {
             onClick={(color) => (state.items.Top = '#FC5A8D')}
           >
             <img src={optionStrawberry} data-option='Strawberry' />
+            Strawberry
           </button>
         </div>
         <div
@@ -342,6 +343,7 @@ function Picker() {
             onClick={(color) => (state.items.Top = '#F3E5AB')}
           >
             <img src={optionVanilla} data-option='Vanilla' />
+            Vanilla
           </button>
         </div>
         <div
@@ -358,6 +360,7 @@ function Picker() {
             onClick={(color) => (state.items.Top = '#F4BB44')}
           >
             <img src={optionMango} data-option='Mango' />
+            Mango
           </button>
         </div>
         <div
@@ -374,6 +377,7 @@ function Picker() {
             onClick={(color) => (state.items.Top = '#7B3F00')}
           >
             <img src={optionChoco} data-option='Choco' />
+            Chocolate
           </button>
         </div>
         <div
@@ -390,6 +394,7 @@ function Picker() {
             onClick={(color) => (state.items.Top = '#FFA500')}
           >
             <img src={optionOrange} data-option='Orange' />
+            Orange
           </button>
         </div>
       </div>
@@ -420,6 +425,7 @@ function Picker() {
             onClick={(color) => (state.items.Base = '#FC5A8D')}
           >
             <img src={optionStrawberry} data-option='Strawberry' />
+            Strawberry
           </button>
         </div>
         <div
@@ -436,6 +442,7 @@ function Picker() {
             onClick={(color) => (state.items.Base = '#F3E5AB')}
           >
             <img src={optionVanilla} data-option='Vanilla' />
+            Vanilla
           </button>
         </div>
         <div
@@ -452,6 +459,7 @@ function Picker() {
             onClick={(color) => (state.items.Base = '#F4BB44')}
           >
             <img src={optionMango} data-option='Mango' />
+            Mango
           </button>
         </div>
         <div
@@ -468,6 +476,7 @@ function Picker() {
             onClick={(color) => (state.items.Base = '#7B3F00')}
           >
             <img src={optionChoco} data-option='Choco' />
+            Chocolate
           </button>
         </div>
         <div
@@ -484,6 +493,7 @@ function Picker() {
             onClick={(color) => (state.items.Base = '#FFA500')}
           >
             <img src={optionOrange} data-option='Orange' />
+            Orange
           </button>
         </div>
       </div>
@@ -534,10 +544,25 @@ export default function Donut() {
 
   return (
     <>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
       <Picker />
-      <Canvas>
+      <Canvas
+        className='canvas'
+        concurrent
+        style={{
+          width: '1000px',
+          height: '800px',
+          marginTop: '10px',
+        }}
+        pixelRatio={[1, 1.5]}
+        camera={{ position: [0, 0, 2.75] }}
+      >
         <ambientLight intensity={0.5} />
-        <directionalLight intensity={1} position={[80, 80, 30]} castShadow />
+
         <ContactShadows
           rotation-x={Math.PI / 2}
           position={[0, -0.8, 0]}

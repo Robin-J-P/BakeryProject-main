@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getCustomUserOrderHistory } from "../../redux/Orders/orders.actions";
-import AllOrderHistory from "../../components/AllOrderHistory";
-import "./styles.scss";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCustomUserOrderHistory } from '../../redux/Orders/orders.actions';
+import AllOrderHistory from '../../components/AllOrderHistory';
+import './styles.scss';
 
 const mapState = ({ ordersData }) => ({
   orderHistory: ordersData.orderHistory.data,
 });
 
-const Customisedorders = props => {
+const Customisedorders = (props) => {
   const dispatch = useDispatch();
   const { orderHistory } = useSelector(mapState);
 
