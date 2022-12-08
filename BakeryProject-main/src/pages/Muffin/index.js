@@ -14,10 +14,10 @@ import optionOrange from './../../assets/orange.jpg';
 const state = proxy({
   current: null,
   items: {
-    base: '#CD7F32',
-    icing: '#AA336A',
-    wrapper: '#ffffff',
-    Sprinkles: '#ykasff',
+    base: '#F4BB44',
+    icing: '#F3E5AB',
+    wrapper: '#FC5A8D',
+    Sprinkles: '#FFA500',
   },
 });
 

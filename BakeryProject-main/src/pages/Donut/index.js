@@ -24,9 +24,9 @@ const state = proxy({
   productPrice: 2,
   items: {
     name: 'Customised Donut',
-    Base: '#CD7F32',
-    Top: '#AA336A',
-    Sprinkles: '#5C4033',
+    Base: '#FFA500',
+    Top: '#7B3F00',
+    Sprinkles: '#F4BB44',
   },
 });
 
