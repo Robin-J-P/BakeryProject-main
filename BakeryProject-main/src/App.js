@@ -1,40 +1,40 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { Switch, Route } from "react-router-dom";
-import { checkUserSession } from "./redux/User/user.actions";
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { Switch, Route } from 'react-router-dom';
+import { checkUserSession } from './redux/User/user.actions';
 
 // components
-import AdminToolbar from "./components/AdminToolbar";
+import AdminToolbar from './components/AdminToolbar';
 
 // hoc
-import WithAuth from "./hoc/withAuth";
-import WithAdminAuth from "./hoc/withAdminAuth";
+import WithAuth from './hoc/withAuth';
+import WithAdminAuth from './hoc/withAdminAuth';
 
 // layouts
-import MainLayout from "./layouts/MainLayout";
-import HomepageLayout from "./layouts/HomepageLayout";
-import AdminLayout from "./layouts/AdminLayout";
-import DashboardLayout from "./layouts/DashboardLayout";
+import MainLayout from './layouts/MainLayout';
+import HomepageLayout from './layouts/HomepageLayout';
+import AdminLayout from './layouts/AdminLayout';
+import DashboardLayout from './layouts/DashboardLayout';
 
 // pages
 
-import Homepage from "./pages/Homepage";
-import Search from "./pages/Search";
-import Registration from "./pages/Registration";
-import Login from "./pages/Login";
-import Recovery from "./pages/Recovery";
-import Dashboard from "./pages/Dashboard";
-import Admin from "./pages/Admin";
-import ProductDetails from "./pages/ProductDetails";
-import Cart from "./pages/Cart";
-import Payment from "./pages/Payment";
-import Order from "./pages/Order";
-import Muffin from "./pages/Muffin";
-import Donut from "./pages/Donut";
-import Cake from "./pages/Cake";
-import Orders from "./pages/Orders";
-import CustomOrders from "./pages/CustomisedOrders";
-import "./default.scss";
+import Homepage from './pages/Homepage';
+import Search from './pages/Search';
+import Registration from './pages/Registration';
+import Login from './pages/Login';
+import Recovery from './pages/Recovery';
+import Dashboard from './pages/Dashboard';
+import Admin from './pages/Admin';
+import ProductDetails from './pages/ProductDetails';
+import Cart from './pages/Cart';
+import Payment from './pages/Payment';
+import Order from './pages/Order';
+import Muffin from './pages/Muffin';
+import Donut from './pages/Donut';
+import Cake from './pages/Cake';
+import Orders from './pages/Orders';
+import CustomOrders from './pages/CustomisedOrders';
+import './default.scss';
 
 const App = (props) => {
   const dispatch = useDispatch();
@@ -44,12 +44,12 @@ const App = (props) => {
   }, []);
 
   return (
-    <div className="App">
+    <div className='App'>
       <AdminToolbar />
       <Switch>
         <Route
           exact
-          path="/"
+          path='/'
           render={() => (
             <HomepageLayout>
               <Homepage />
@@ -58,7 +58,7 @@ const App = (props) => {
         />
         <Route
           exact
-          path="/search"
+          path='/search'
           render={() => (
             <MainLayout>
               <Search />
@@ -66,7 +66,7 @@ const App = (props) => {
           )}
         />
         <Route
-          path="/search/:filterType"
+          path='/search/:filterType'
           render={() => (
             <MainLayout>
               <Search />
@@ -74,18 +74,39 @@ const App = (props) => {
           )}
         />
         <Route
-          path="/product/:productID"
+          path='/product/:productID'
           render={() => (
             <MainLayout>
               <ProductDetails />
             </MainLayout>
           )}
         />
-        <Route path="/Muffin" render={() => <Muffin />} />
-        <Route path="/Donut" render={() => <Donut />} />
-        <Route path="/Cake" render={() => <Cake />} />
         <Route
-          path="/cart"
+          path='/Muffin'
+          render={() => (
+            <MainLayout>
+              <Muffin />
+            </MainLayout>
+          )}
+        />
+        <Route
+          path='/Donut'
+          render={() => (
+            <MainLayout>
+              <Donut />
+            </MainLayout>
+          )}
+        />
+        <Route
+          path='/Cake'
+          render={() => (
+            <MainLayout>
+              <Cake />
+            </MainLayout>
+          )}
+        />
+        <Route
+          path='/cart'
           render={() => (
             <MainLayout>
               <Cart />
@@ -93,7 +114,7 @@ const App = (props) => {
           )}
         />
         <Route
-          path="/payment"
+          path='/payment'
           render={() => (
             <WithAuth>
               <MainLayout>
@@ -103,7 +124,7 @@ const App = (props) => {
           )}
         />
         <Route
-          path="/registration"
+          path='/registration'
           render={() => (
             <MainLayout>
               <Registration />
@@ -111,7 +132,7 @@ const App = (props) => {
           )}
         />
         <Route
-          path="/login"
+          path='/login'
           render={() => (
             <MainLayout>
               <Login />
@@ -119,7 +140,7 @@ const App = (props) => {
           )}
         />
         <Route
-          path="/recovery"
+          path='/recovery'
           render={() => (
             <MainLayout>
               <Recovery />
@@ -127,7 +148,7 @@ const App = (props) => {
           )}
         />
         <Route
-          path="/dashboard"
+          path='/dashboard'
           render={() => (
             <WithAuth>
               <DashboardLayout>
@@ -137,7 +158,7 @@ const App = (props) => {
           )}
         />
         <Route
-          path="/order/:orderID"
+          path='/order/:orderID'
           render={() => (
             <WithAuth>
               <DashboardLayout>
@@ -147,7 +168,7 @@ const App = (props) => {
           )}
         />
         <Route
-          path="/orders/:orderID"
+          path='/orders/:orderID'
           render={() => (
             <WithAdminAuth>
               <AdminLayout>
@@ -158,7 +179,7 @@ const App = (props) => {
         />
 
         <Route
-          path="/admin"
+          path='/admin'
           render={() => (
             <WithAdminAuth>
               <AdminLayout>
@@ -168,7 +189,7 @@ const App = (props) => {
           )}
         />
         <Route
-          path="/orders"
+          path='/orders'
           render={() => (
             <WithAdminAuth>
               <AdminLayout>
@@ -178,7 +199,7 @@ const App = (props) => {
           )}
         />
         <Route
-          path="/customorders"
+          path='/customorders'
           render={() => (
             <WithAdminAuth>
               <AdminLayout>

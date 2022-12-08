@@ -7,7 +7,7 @@ import Header from './../components/Header';
 import VerticalNav from './../components/VerticalNav';
 import Footer from './../components/Footer';
 
-const DashBoardLayout = props => {
+const DashBoardLayout = (props) => {
   const dispatch = useDispatch();
 
   const signOut = () => {
@@ -15,28 +15,24 @@ const DashBoardLayout = props => {
   };
 
   return (
-    <div className="dashboardLayout">
+    <div className='dashboardLayout'>
       <Header {...props} />
-      <div className="controlPanel">
-        <div className="sidebar">
+      <div className='controlPanel'>
+        <div className='sidebar'>
           <VerticalNav>
             <ul>
               <li>
-                <Link to="/dashboard">
-                  Home
-                </Link>
+                <Link to='/'>Home</Link>
               </li>
               <li>
-                <span className="signOut" onClick={() => signOut()}>
+                <span className='signOut' onClick={() => signOut()}>
                   Sign Out
                 </span>
               </li>
             </ul>
           </VerticalNav>
         </div>
-        <div className="content">
-          {props.children}
-        </div>
+        <div className='content'>{props.children}</div>
       </div>
       <Footer />
     </div>

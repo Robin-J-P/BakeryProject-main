@@ -55,7 +55,7 @@ function Cake1(props) {
       ref={ref}
       {...props}
       dispose={null}
-      scale={0.5}
+      scale={1}
       onPointerOver={(e) => (e.stopPropagation(), set(e.object.material.name))}
       onPointerOut={(e) => e.intersections.length === 0 && set(null)}
       onPointerMissed={() => (state.current = null)}

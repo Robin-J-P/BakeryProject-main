@@ -1,7 +1,10 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { selectCartItems, selectCartTotal } from './../../redux/Cart/cart.selectors';
+import {
+  selectCartItems,
+  selectCartTotal,
+} from './../../redux/Cart/cart.selectors';
 import { createStructuredSelector } from 'reselect';
 import './styles.scss';
 import Button from './../forms/Button';
@@ -9,45 +12,38 @@ import Item from './Item';
 
 const mapState = createStructuredSelector({
   cartItems: selectCartItems,
-  total: selectCartTotal
+  total: selectCartTotal,
 });
 
-const Checkout = ({ }) => {
+const Checkout = ({}) => {
   const history = useHistory();
   const { cartItems, total } = useSelector(mapState);
 
   const errMsg = 'You have no items in your cart.';
 
   return (
-    <div className="checkout">
-      <h1>
-        Checkout
-      </h1>
+    <div className='checkout'>
+      <h1>Checkout</h1>
 
-      <div className="cart">
+      <div className='cart'>
         {cartItems.length > 0 ? (
-          <table border="0" cellPadding="0" cellSpacing="0">
+          <table border='0' cellPadding='0' cellSpacing='0'>
             <tbody>
               <tr>
                 <td>
-                  <table className="checkoutHeader" border="0" cellPadding="10" cellSpacing="0">
+                  <table
+                    className='checkoutHeader'
+                    border='0'
+                    cellPadding='10'
+                    cellSpacing='0'
+                  >
                     <tbody>
                       <tr>
-                        <th>
-                          Product
-                        </th>
-                        <th>
-                          Description
-                        </th>
-                        <th>
-                          Quantity
-                        </th>
-                        <th>
-                          Price
-                        </th>
-                        <th>
-                          Remove
-                        </th>
+                        <th>Product</th>
+                        <th>Description</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Remove</th>
                       </tr>
                     </tbody>
                   </table>
@@ -55,7 +51,7 @@ const Checkout = ({ }) => {
               </tr>
               <tr>
                 <td>
-                  <table border="0" cellSpacing="0" cellPadding="0">
+                  <table border='0' cellSpacing='0' cellPadding='0'>
                     <tbody>
                       {cartItems.map((item, pos) => {
                         return (
@@ -72,17 +68,15 @@ const Checkout = ({ }) => {
               </tr>
               <tr>
                 <td>
-                  <table border="0" cellSpacing="0" cellPadding="0">
+                  <table border='0' cellSpacing='0' cellPadding='0'>
                     <tbody>
                       <tr>
                         <td>
-                          <table border="0" cellPadding="10" cellSpacing="0">
+                          <table border='0' cellPadding='10' cellSpacing='0'>
                             <tbody>
                               <tr>
                                 <td>
-                                <h3>
-                                  Total: £{total}
-                                </h3>
+                                  <h3>Total: ${total}</h3>
                                 </td>
                               </tr>
                             </tbody>
@@ -91,7 +85,7 @@ const Checkout = ({ }) => {
                       </tr>
                       <tr>
                         <td>
-                          <table border="0" cellPadding="10" cellSpacing="0">
+                          <table border='0' cellPadding='10' cellSpacing='0'>
                             <tbody>
                               <tr>
                                 <td>
@@ -100,8 +94,10 @@ const Checkout = ({ }) => {
                                   </Button>
                                 </td>
                                 <td>
-                                  <Button onClick={() => history.push('/payment')}>
-                                    Checkout 
+                                  <Button
+                                    onClick={() => history.push('/payment')}
+                                  >
+                                    Checkout
                                   </Button>
                                 </td>
                               </tr>
@@ -116,10 +112,8 @@ const Checkout = ({ }) => {
             </tbody>
           </table>
         ) : (
-            <p>
-              {errMsg}
-            </p>
-          )}
+          <p>{errMsg}</p>
+        )}
       </div>
     </div>
   );

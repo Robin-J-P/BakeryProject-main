@@ -1,11 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { signOutUserStart } from "../redux/User/user.actions";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { signOutUserStart } from '../redux/User/user.actions';
 
-import Header from "../components/Header";
-import VerticalNav from "../components/VerticalNav";
-import Footer from "../components/Footer";
+import Header from '../components/Header';
+import VerticalNav from '../components/VerticalNav';
+import Footer from '../components/Footer';
 
 const AdminLayout = (props) => {
   const dispatch = useDispatch();
@@ -15,31 +15,30 @@ const AdminLayout = (props) => {
   };
 
   return (
-    <div className="adminLayout">
+    <div className='adminLayout'>
       <Header {...props} />
-      <div className="controlPanel">
-        <div className="sidebar">
+      <div className='controlPanel'>
+        <div className='sidebar'>
           <VerticalNav>
             <ul>
               <li>
-                <Link to="/admin">Home</Link>
+                <Link to='/'>Home</Link>
               </li>
               <li>
-                <span className="signOut" onClick={() => signOut()}>
+                <span className='signOut' onClick={() => signOut()}>
                   Sign Out
                 </span>
               </li>
               <li>
-              <Link to="/orders">Orders</Link>
-                
+                <Link to='/orders'>Orders</Link>
               </li>
               <li>
-              <Link to="/customorders">Custom Orders</Link>
+                <Link to='/customorders'>Custom Orders</Link>
               </li>
             </ul>
           </VerticalNav>
         </div>
-        <div className="content">{props.children}</div>
+        <div className='content'>{props.children}</div>
       </div>
       <Footer />
     </div>
