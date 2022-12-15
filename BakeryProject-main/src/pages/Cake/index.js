@@ -4,12 +4,16 @@ import { OrbitControls, ContactShadows, Environment } from '@react-three/drei';
 import { useGLTF } from '@react-three/drei';
 import { proxy, useProxy } from 'valtio';
 import { CirclePicker } from 'react-color';
+import { useDispatch } from 'react-redux';
+import { addProduct } from './../../redux/Cart/cart.actions';
+import { Link, useHistory } from 'react-router-dom';
 import './styles.scss';
 import optionStrawberry from './../../assets/Strawberry-PNG.png';
 import optionVanilla from './../../assets/vanilla.jpg';
 import optionMango from './../../assets/mango.jpg';
 import optionChoco from './../../assets//chocolate.jpg';
 import optionOrange from './../../assets/orange.jpg';
+import Button from './../../components/forms/Button';
 
 const state = proxy({
   current: null,
@@ -1370,6 +1374,20 @@ function Picker() {
 // }
 
 export default function Cake() {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const snap = useProxy(state);
+
+  const configAddToCartBtn = {
+    type: 'button',
+  };
+
+  const handleAddToCart = (snap) => {
+    if (!snap) return;
+    dispatch(addProduct(snap));
+    history.push('/cart');
+  };
+
   return (
     <>
       <br></br>
@@ -1406,6 +1424,9 @@ export default function Cake() {
         </Suspense>
         <OrbitControls />
       </Canvas>
+      <Button {...configAddToCartBtn} onClick={() => handleAddToCart(snap)}>
+        Add to cart
+      </Button>
     </>
   );
 }
